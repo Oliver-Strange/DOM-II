@@ -27,16 +27,14 @@ bodyEvent.addEventListener('keydown', function(event){
 //Load
 window.addEventListener('load', function(){
     alert('The party had arrived!');
-    event.stopPropagation();
 });
 
 //Resize
 window.addEventListener('resize', function(){
     alert('We can accommodate all sizes!');
-    event.stopPropagation();
 });
 
-//scroll
+//scroll - popping up too much
 window.addEventListener('scroll', function(event){
     alert('Lots to see and do!');
     event.stopPropagation();
@@ -65,14 +63,23 @@ imgContent.addEventListener('dragstart',function(event){
         imgContent.style.border = '';
     },500);
 },false);
-/*
-const  = document. 
-.addEventListener('focus', function(event){
 
+//focus
+let navLinks = Array.from(document.querySelectorAll(".nav-link"));
+navLinks.forEach(function(event){
+  event.addEventListener("focus", event => {
+    event.target.style.backgroundColor = 'pink';
+    setTimeout(function(){
+        event.target.style.backgroundColor = '';
+    }, 500);
+  });
+  
 });
 
-const  = document. 
-.addEventListener('drag', function(event){
-
+//mouse out
+bodyEvent.addEventListener('mouseout',function(event){
+    event.target.style.backgroundColor = "lightBlue";
+    setTimeout(function(){
+        event.target.style.backgroundColor = '';
+    }, 200);
 });
-*/
