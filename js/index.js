@@ -11,6 +11,7 @@ navEvent.addEventListener('mouseover', event =>{
         event.target.style.color = '';
         event.target.style.fontSize = '';
     }, 400);
+    event.stopPropagation();
 }, false);
 
 //Keydown
@@ -20,26 +21,33 @@ bodyEvent.addEventListener('keydown', function(event){
     setTimeout(function(){
         event.target.style.display = '';
     }, 600);
+    event.stopPropagation();
 }, false);
 
 //Load
 window.addEventListener('load', function(){
     alert('The party had arrived!');
+    event.stopPropagation();
 });
 
 //Resize
 window.addEventListener('resize', function(){
     alert('We can accommodate all sizes!');
+    event.stopPropagation();
 });
-// const  = document. 
-// .addEventListener('select', function(event){
 
-// });
+//scroll
+window.addEventListener('scroll', function(event){
+    alert('Lots to see and do!');
+    event.stopPropagation();
+});
 
-// const  = document. 
-// .addEventListener('scroll', function(event){
-//     event.target.style.transform = 'rotate(360)'
-// });
+//double click - not working on all btn
+const signUpBtns = document.querySelector('.btn');
+    signUpBtns.addEventListener('dblclick', function(event){
+        signUpBtns.style.border = '3px solid green';
+        event.stopPropagation();
+    });
 
 /*
 const  = document. 
@@ -51,15 +59,6 @@ const  = document.
 .addEventListener('focus', function(event){
 
 });
-
-const  = document. 
-.addEventListener('resize', function(event){
-
-});
-
-
-
-
 
 const  = document. 
 .addEventListener('dbclick', function(event){
