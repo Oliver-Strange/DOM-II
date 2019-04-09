@@ -21,7 +21,6 @@ bodyEvent.addEventListener('keydown', function(event){
     setTimeout(function(){
         event.target.style.display = '';
     }, 600);
-    event.stopPropagation();
 }, false);
 
 //Load
