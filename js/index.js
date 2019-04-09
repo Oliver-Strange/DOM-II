@@ -56,12 +56,16 @@ bodyEvent.addEventListener('wheel', function(event){
         bodyEvent.style.backgroundColor = '';
     }, 2000);
 });
+
+//drag - only working on one img
+const imgContent = document.querySelector('.img-content img');
+imgContent.addEventListener('dragstart',function(event){
+    imgContent.style.border = '3px solid red';
+    setTimeout(function(){
+        imgContent.style.border = '';
+    },500);
+},false);
 /*
-const  = document. 
-.addEventListener('wheel', function(event){
-
-});
-
 const  = document. 
 .addEventListener('focus', function(event){
 
