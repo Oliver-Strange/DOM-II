@@ -49,6 +49,13 @@ const signUpBtns = document.querySelector('.btn');
         event.stopPropagation();
     });
 
+//wheel
+bodyEvent.addEventListener('wheel', function(event){
+    bodyEvent.style.backgroundColor = 'lightGrey';
+    setTimeout(function(){
+        bodyEvent.style.backgroundColor = '';
+    }, 2000);
+});
 /*
 const  = document. 
 .addEventListener('wheel', function(event){
@@ -57,11 +64,6 @@ const  = document.
 
 const  = document. 
 .addEventListener('focus', function(event){
-
-});
-
-const  = document. 
-.addEventListener('dbclick', function(event){
 
 });
 
